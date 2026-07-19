@@ -62,9 +62,9 @@ El resto (creación con `status=closed` rechazada, filtros combinados, orden des
 
 - **PostgreSQL en Docker.** Es el cambio más obvio de cara a producción; no lo hice porque el enunciado lo marca como plus y prefería invertir el tiempo en la regla de negocio, los tests y que el `docker compose up` fuera robusto.
 - **Paginación en `GET /api/tickets/`.** Con un volumen de datos real, devolver la lista completa no escala; no la añadí porque no estaba pedida y complica el contrato del frontend sin necesidad para este ejercicio.
-- **Autenticación/autorización.** Explícitamente fuera de alcance según el enunciado.
-- **Healthcheck de `depends_on`** en `docker-compose.yml` (hoy `frontend` depende de `backend` solo por orden de arranque, no espera a que las migraciones terminen). En la práctica no ha sido un problema porque el frontend no hace peticiones hasta que el usuario interactúa, pero sería más correcto con un `condition: service_healthy`.
-- **Tests de frontend** (component tests o e2e con Playwright/Vitest). Los validé manualmente en navegador contra la stack dockerizada durante el desarrollo, pero no dejé un test automatizado en el repo.
+- **Autenticación/autorización.** Explícitamente fuera de alcance según el enunciado. De implementarse, contemplaría tres roles: `admin` (gestiona el sistema), `agent` (resuelve tickets de su departamento) y `customer` (reporta tickets; asociado a un departamento, ligado al punto de departamentos y clasificación automática).
+- **Departamentos y clasificación automática.** Añadir un campo `department` al ticket y clasificar cada ticket entrante en su departamento correspondiente mediante IA (a partir del título/descripción), en vez de asignarlo a mano. Es una funcionalidad nueva, no una decisión de este ejercicio, así que la dejo fuera de alcance.
+
 
 ## Estructura
 
