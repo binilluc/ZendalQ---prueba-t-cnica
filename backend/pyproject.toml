@@ -1,0 +1,22 @@
+[project]
+name = "minigestor-backend"
+version = "0.1.0"
+description = "Mini gestor de incidencias - API"
+authors = [
+    {name = "Lluc Coll Pons",email = "lluccol.2024.alumn@cescristorey.com"}
+]
+requires-python = "^3.12"
+dependencies = [
+    "django (>=5.1,<6.0)",
+    "djangorestframework (>=3.17.1,<4.0.0)",
+    "django-cors-headers (>=4.9.0,<5.0.0)",
+    "gunicorn (>=26.0.0,<27.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
