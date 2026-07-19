@@ -1,6 +1,6 @@
 # Mini gestor de incidencias
 
-Aplicación mínima de gestión de tickets: API en Django + DRF y una vista en Nuxt 4 que la consume.
+API en Django + DRF y una vista en Nuxt 4 que la consume.
 
 ## Arranque
 
